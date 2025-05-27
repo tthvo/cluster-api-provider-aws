@@ -574,14 +574,19 @@ func (s *Service) runInstance(role string, i *infrav1.Instance) (*infrav1.Instan
 
 		input.NetworkInterfaces = netInterfaces
 	} else {
-		input.NetworkInterfaces = []*ec2.InstanceNetworkInterfaceSpecification{
-			{
-				DeviceIndex:              aws.Int64(0),
-				SubnetId:                 aws.String(i.SubnetID),
-				Groups:                   aws.StringSlice(i.SecurityGroupIDs),
-				AssociatePublicIpAddress: i.PublicIPOnLaunch,
-			},
+		netInterface := &ec2.InstanceNetworkInterfaceSpecification{
+			DeviceIndex:              aws.Int64(0),
+			SubnetId:                 aws.String(i.SubnetID),
+			Groups:                   aws.StringSlice(i.SecurityGroupIDs),
+			AssociatePublicIpAddress: i.PublicIPOnLaunch,
 		}
+
+		if s.scope.VPC().IsIPv6Enabled() {
+			netInterface.Ipv6AddressCount = aws.Int64(1)
+			netInterface.PrimaryIpv6 = aws.Bool(true)
+		}
+
+		input.NetworkInterfaces = []*ec2.InstanceNetworkInterfaceSpecification{netInterface}
 	}
 
 	if i.NetworkInterfaceType != "" {
