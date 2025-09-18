@@ -19,6 +19,7 @@ package endpoints
 import (
 	"context"
 	"errors"
+	"fmt"
 	"net/url"
 	"slices"
 	"strings"
@@ -62,10 +63,34 @@ func ParseFlag(serviceEndpoints string) error {
 		return nil
 	}
 
+	// serviceIDs defined in the AWS SDK v2 for each applicable service.
+	var serviceIDs = []string{
+		s3.ServiceID,
+		elb.ServiceID,
+		elbv2.ServiceID,
+		ec2.ServiceID,
+		rgapi.ServiceID,
+		sqs.ServiceID,
+		eventbridge.ServiceID,
+		eks.ServiceID,
+		ssm.ServiceID,
+		sts.ServiceID,
+		secretsmanager.ServiceID,
+	}
+
+	fmt.Println("-----------------------------------------")
+	fmt.Println("Expected AWS SDK v2 service IDs:")
+	for _, serviceID := range serviceIDs {
+		fmt.Printf("- %s\n", serviceID)
+	}
+
 	// There is no Enum for serviceID in V2, so we will directly use the provided endpoint
 	// If the custom endpoint has any issue, EndpointResolverV2 falls back to default endpoint of specific service.
 	signingRegionConfigs := strings.Split(serviceEndpoints, ";")
 	for _, regionConfig := range signingRegionConfigs {
+		fmt.Println("-----------------------------------------")
+		fmt.Println("Service IDs from argument:")
+
 		components := strings.SplitN(regionConfig, ":", 2)
 		if len(components) != 2 {
 			return errServiceEndpointSigningRegion
@@ -87,6 +112,8 @@ func ParseFlag(serviceEndpoints string) error {
 			}
 			seenServices = append(seenServices, serviceID)
 
+			fmt.Printf("- %s\n", serviceID)
+
 			// convert service ID to UpperCase as service IDs in AWS SDK GO V2 are UpperCase & Go map is Case Sensitve
 			// This is for backward compabitibility
 			// Ref: SDK V2 https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/ec2#pkg-constants
@@ -105,6 +132,24 @@ func ParseFlag(serviceEndpoints string) error {
 			serviceEndpointsMap[serviceID] = endpoint
 		}
 	}
+
+	// HACK: Let's see if the service IDs constructed correctly
+	// serviceIDs defined in the AWS SDK v2 for each applicable service.
+	fmt.Println("-----------------------------------------")
+	fmt.Println("Service endpoints after parsing:")
+
+	for id, url := range serviceEndpointsMap {
+		fmt.Printf("- %s: %s\n", id, url.URL)
+	}
+
+	fmt.Println("-----------------------------------------")
+	fmt.Println("Can a custom service endpoint be found?")
+
+	for _, serviceID := range serviceIDs {
+		_, ok := serviceEndpointsMap[serviceID]
+		fmt.Printf("Service ID: %s, Found: %v\n", serviceID, ok)
+	}
+
 	return nil
 }
 
