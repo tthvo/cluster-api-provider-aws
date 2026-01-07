@@ -39,6 +39,31 @@ spec:
 
 **Note:** CAPA, by default, will provision a dualstack infrastructure (i.e. dualstack VPC and subnets). However, your Kubernetes cluster can be configured as either IPv6-only or dualstack depending on your pod/service CIDR configuration.
 
+## Supported Network Configurations
+
+CAPA supports various network configuration combinations for creating clusters with different IPv4/IPv6 requirements. The following table shows all possible combinations of subnet and load balancer configurations (assuming internet-facing load balancer):
+
+| Public Subnet | Private Subnet | Load Balancer IP Type | Target Group IP Type | Status | Notes |
+|---------------|----------------|----------------------|---------------------|--------|-------|
+| IPv4 | IPv4 | ipv4 | ipv4 | ✅ Supported | Traditional IPv4 cluster |
+| dualstack | dualstack | dualstack | ipv6 | ✅ Supported | Dualstack LB with IPv6 as primary |
+| dualstack | dualstack | dualstack | ipv4 | ✅ Supported | Dualstack LB with IPv4 as primary |
+| dualstack | dualstack | ipv4 | ipv4 | ✅ Supported | IPv4-only LB on dualstack infrastructure |
+| dualstack | IPv4 | dualstack | ipv4 | ✅ Supported | Dualstack LB with IPv4-only control plane |
+| dualstack | IPv4 | ipv4 | ipv4 | ✅ Supported | IPv4-only LB with IPv4-only control plane |
+| dualstack | IPv6-only | dualstack | ipv6 | ✅ Supported | Dualstack LB with IPv6-only control plane (NAT64/DNS64 enabled automatically for IPv6-only subnets) |
+| dualstack | IPv4 | dualstack | ipv6 | ❌ Invalid | Cannot use IPv6 targets when control plane has no IPv6 |
+| IPv6-only | * | * | * | ❌ Invalid | NLB requires IPv4 CIDR on subnets |
+| * | * | ipv6 | * | ❌ Invalid | ipv6 is not a valid load balancer IP type |
+
+<aside class="note">
+
+<h1>Note</h1>
+
+NAT64/DNS64 is only enabled automatically for CAPA-managed IPv6-only private subnets. If you are using bring-your-own (BYO) VPC/subnets, you must configure NAT64/DNS64 manually.
+
+</aside>
+
 ## IPv6 CIDR Allocations
 
 CAPA supports various methods to allocate an IPv6 CIDR to the cluster VPC.
@@ -141,9 +166,9 @@ spec:
       version: "v1.22.6-eksbuild.1"  # Note: Check for latest compatible version
 ```
 
-## Creating IPv6 Self-managed Clusters
+## Creating IPv6 Only Self-managed Clusters
 
-To quickly deploy an IPv6 self-managed cluster, use the [IPv6 cluster template](https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/refs/heads/main/templates/cluster-template-ipv6.yaml).
+To quickly deploy an IPv6 only self-managed cluster, use the [IPv6 cluster template](https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/refs/heads/main/templates/cluster-template-ipv6.yaml).
 
 When creating a self-managed cluster, you can define the IPv6 Pod and Service CIDR. For example, you can define ULA IPv6 range `fd01::/48` for pod networking and `fd02::/112` for service networking.
 
@@ -166,8 +191,6 @@ spec:
 
 <h1>Warning</h1>
 
-**DNS64/NAT64**: If you are configuring CAPA to create dualstack private subnets (by default) for an IPv6 cluster and need IPv6-only pods to reach IPv4-only internet services, you must enable [DNS64/NAT64](https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-nat64-dns64.html) as CAPA does not do so.
-
 **CoreDNS**: Since CoreDNS pods run on the single-stack IPv6 pod network, they will fail to resolve non-cluster DNS queries via the IPv4 upstream nameserver in `/etc/resolv.conf`.
 
 The workaround is to edit the `coredns` ConfigMap in namespace `kube-system` to use Route53 Resolver IPv6 nameserver `fd00:ec2::253`, by setting `forward . /etc/resolv.conf` part to `forward . fd00:ec2::253 /etc/resolv.conf`.
@@ -175,13 +198,15 @@ The workaround is to edit the `coredns` ConfigMap in namespace `kube-system` to 
   kubectl -n kube-system edit cm/coredns
   ```
 
-**Note**: This CoreDNS workaround is NOT required for dualstack clusters where pods have both IPv4 and IPv6 addresses.
+This CoreDNS workaround is NOT required for dualstack clusters where pods have both IPv4 and IPv6 addresses.
+
+**DNS64/NAT64**: If you are creating nodes in dualstack subnets for an IPv6 only cluster and need IPv6-only pods to reach IPv4-only internet services, you must enable [DNS64/NAT64](https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-nat64-dns64.html) for those subnets as CAPA does not do so. See [Mixing subnets of different IP families](#mixing-subnets-of-different-ip-families) on how to tell CAPA to create IPv6-only subnets.
 
 </aside>
 
 ## Creating Dualstack Self-managed Clusters
 
-To quickly deploy a dualstack self-managed cluster, use the [Dualstack cluster template](https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/refs/heads/main/templates/cluster-template-dualstack.yaml).
+To quickly deploy a dualstack self-managed cluster, use the [Dualstack cluster template](https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/refs/heads/main/templates/cluster-template-dualstack.yaml). The quickstart template creates a dualstack cluster with IPv6 as primary.
 
 When creating a self-managed cluster, you can define both IPv4 and IPv6 Pod and Service CIDRs. For example:
 
@@ -194,12 +219,12 @@ spec:
   clusterNetwork:
     pods:
       cidrBlocks:
-      - 192.168.0.0/16
       - fd01::/48
+      - 192.168.0.0/16
     services:
       cidrBlocks:
-      - 172.30.0.0/16
       - fd02::/112
+      - 172.30.0.0/16
 ```
 
 ## Cloud Controller Manager Node IP Configurations
@@ -217,8 +242,8 @@ metadata:
 data:
   cloud-config.conf: |
     [Global]
-    NodeIPFamilies=ipv4
     NodeIPFamilies=ipv6
+    NodeIPFamilies=ipv4
 ```
 
 And then provide the `cloud-config.conf` to the CCM DaemonSet as follows:

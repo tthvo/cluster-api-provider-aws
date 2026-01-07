@@ -59,11 +59,11 @@ For more information, see AWS's [Network Load Balancer and Security Groups](http
 
 **Note:** The `targetGroupIPType` field is only available when using Network Load Balancers (NLB), Application Load Balancers (ALB), or Gateway Load Balancers (ELB). It **cannot** be configured when using Classic Load Balancers.
 
-By default, the target group IP address type is set based on the VPC configuration:
-- If the VPC has IPv6 enabled, the target group uses `ipv6`
-- Otherwise, it defaults to `ipv4`
+By default, the target group IP address type is automatically determined from the control plane subnet configuration:
+- If control plane subnets are IPv4-only, the target group uses `ipv4`
+- If control plane subnets are IPv6-only or dualstack, the target group uses `ipv6`
 
-You can explicitly configure the IP address type for the target group using the `targetGroupIPType` field:
+You can explicitly override the IP address type for the target group using the `targetGroupIPType` field:
 
 ```yaml
 ---

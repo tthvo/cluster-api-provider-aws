@@ -37,11 +37,11 @@ spec:
 
 ## Target Group IP Address Type
 
-The secondary load balancer supports the same `targetGroupIPType` configuration as the primary load balancer. By default, the target group IP address type is set based on the VPC configuration:
-- If the VPC has IPv6 enabled, the target group uses `ipv6`
-- Otherwise, it defaults to `ipv4`
+The secondary load balancer supports the same `targetGroupIPType` configuration as the primary load balancer. By default, the target group IP address type is automatically determined from the control plane subnet configuration:
+- If control plane subnets are IPv4-only, the target group uses `ipv4`
+- If control plane subnets are IPv6-only or dualstack, the target group uses `ipv6`
 
-You can explicitly configure the IP address type for the secondary load balancer's target group:
+You can explicitly override the IP address type for the secondary load balancer's target group:
 
 ```yaml
 ---

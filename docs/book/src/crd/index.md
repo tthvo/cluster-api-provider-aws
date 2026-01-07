@@ -2385,9 +2385,7 @@ int64
 <td>
 <code>conditions</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.Conditions
-</a>
+Cluster API api/core/v1beta1.Conditions
 </em>
 </td>
 <td>
@@ -3277,9 +3275,7 @@ int64
 <td>
 <code>conditions</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.Conditions
-</a>
+Cluster API api/core/v1beta1.Conditions
 </em>
 </td>
 <td>
@@ -4553,9 +4549,7 @@ EndpointAccess
 <td>
 <code>controlPlaneEndpoint</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.APIEndpoint
-</a>
+Cluster API api/core/v1beta1.APIEndpoint
 </em>
 </td>
 <td>
@@ -4959,9 +4953,7 @@ EndpointAccess
 <td>
 <code>controlPlaneEndpoint</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.APIEndpoint
-</a>
+Cluster API api/core/v1beta1.APIEndpoint
 </em>
 </td>
 <td>
@@ -5169,9 +5161,7 @@ NetworkStatus
 <td>
 <code>failureDomains</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.FailureDomains
-</a>
+Cluster API api/core/v1beta1.FailureDomains
 </em>
 </td>
 <td>
@@ -5261,9 +5251,7 @@ state, and will be set to a descriptive error message.</p>
 <td>
 <code>conditions</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.Conditions
-</a>
+Cluster API api/core/v1beta1.Conditions
 </em>
 </td>
 <td>
@@ -6503,9 +6491,7 @@ EndpointAccess
 <td>
 <code>controlPlaneEndpoint</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.APIEndpoint
-</a>
+Cluster API api/core/v1beta1.APIEndpoint
 </em>
 </td>
 <td>
@@ -6631,7 +6617,7 @@ OIDCIdentityProviderConfig
 </td>
 <td>
 <em>(Optional)</em>
-<p>IdentityProviderconfig is used to specify the oidc provider config
+<p>OIDCIdentityProviderConfig is used to specify the OIDC provider config
 to be attached with this eks cluster</p>
 </td>
 </tr>
@@ -6647,6 +6633,21 @@ AccessConfig
 <td>
 <em>(Optional)</em>
 <p>AccessConfig specifies the access configuration information for the cluster</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>accessEntries</code><br/>
+<em>
+<a href="#controlplane.cluster.x-k8s.io/v1beta2.AccessEntry">
+[]AccessEntry
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>AccessEntries specifies the access entries for the cluster
+Access entries require AuthenticationMode to be either &ldquo;api&rdquo; or &ldquo;api_and_config_map&rdquo;</p>
 </td>
 </tr>
 <tr>
@@ -7000,9 +7001,7 @@ EndpointAccess
 <td>
 <code>controlPlaneEndpoint</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.APIEndpoint
-</a>
+Cluster API api/core/v1beta1.APIEndpoint
 </em>
 </td>
 <td>
@@ -7128,7 +7127,7 @@ OIDCIdentityProviderConfig
 </td>
 <td>
 <em>(Optional)</em>
-<p>IdentityProviderconfig is used to specify the oidc provider config
+<p>OIDCIdentityProviderConfig is used to specify the OIDC provider config
 to be attached with this eks cluster</p>
 </td>
 </tr>
@@ -7144,6 +7143,21 @@ AccessConfig
 <td>
 <em>(Optional)</em>
 <p>AccessConfig specifies the access configuration information for the cluster</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>accessEntries</code><br/>
+<em>
+<a href="#controlplane.cluster.x-k8s.io/v1beta2.AccessEntry">
+[]AccessEntry
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>AccessEntries specifies the access entries for the cluster
+Access entries require AuthenticationMode to be either &ldquo;api&rdquo; or &ldquo;api_and_config_map&rdquo;</p>
 </td>
 </tr>
 <tr>
@@ -7251,9 +7265,7 @@ NetworkStatus
 <td>
 <code>failureDomains</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.FailureDomains
-</a>
+Cluster API api/core/v1beta1.FailureDomains
 </em>
 </td>
 <td>
@@ -7343,9 +7355,7 @@ state, and will be set to a descriptive error message.</p>
 <td>
 <code>conditions</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.Conditions
-</a>
+Cluster API api/core/v1beta1.Conditions
 </em>
 </td>
 <td>
@@ -7731,9 +7741,7 @@ EndpointAccess
 <td>
 <code>controlPlaneEndpoint</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.APIEndpoint
-</a>
+Cluster API api/core/v1beta1.APIEndpoint
 </em>
 </td>
 <td>
@@ -7859,7 +7867,7 @@ OIDCIdentityProviderConfig
 </td>
 <td>
 <em>(Optional)</em>
-<p>IdentityProviderconfig is used to specify the oidc provider config
+<p>OIDCIdentityProviderConfig is used to specify the OIDC provider config
 to be attached with this eks cluster</p>
 </td>
 </tr>
@@ -7875,6 +7883,21 @@ AccessConfig
 <td>
 <em>(Optional)</em>
 <p>AccessConfig specifies the access configuration information for the cluster</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>accessEntries</code><br/>
+<em>
+<a href="#controlplane.cluster.x-k8s.io/v1beta2.AccessEntry">
+[]AccessEntry
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>AccessEntries specifies the access entries for the cluster
+Access entries require AuthenticationMode to be either &ldquo;api&rdquo; or &ldquo;api_and_config_map&rdquo;</p>
 </td>
 </tr>
 <tr>
@@ -8026,6 +8049,191 @@ ignored when updating existing clusters. Defaults to true.</p>
 </tr>
 </tbody>
 </table>
+<h3 id="controlplane.cluster.x-k8s.io/v1beta2.AccessEntry">AccessEntry
+</h3>
+<p>
+(<em>Appears on:</em><a href="#controlplane.cluster.x-k8s.io/v1beta2.AWSManagedControlPlaneSpec">AWSManagedControlPlaneSpec</a>)
+</p>
+<p>
+<p>AccessEntry represents an AWS EKS access entry for IAM principals</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>principalARN</code><br/>
+<em>
+string
+</em>
+</td>
+<td>
+<p>PrincipalARN is the Amazon Resource Name (ARN) of the IAM principal</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>type</code><br/>
+<em>
+<a href="#controlplane.cluster.x-k8s.io/v1beta2.AccessEntryType">
+AccessEntryType
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Type is the type of access entry. Defaults to standard if not specified.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>kubernetesGroups</code><br/>
+<em>
+[]string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>KubernetesGroups represents the Kubernetes groups for the access entry
+Cannot be specified if Type is &ldquo;ec2_linux&rdquo; or &ldquo;ec2_windows&rdquo;</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>username</code><br/>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Username is the username for the access entry</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>accessPolicies</code><br/>
+<em>
+<a href="#controlplane.cluster.x-k8s.io/v1beta2.AccessPolicyReference">
+[]AccessPolicyReference
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>AccessPolicies specifies the policies to associate with this access entry
+Cannot be specified if Type is &ldquo;ec2_linux&rdquo; or &ldquo;ec2_windows&rdquo;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="controlplane.cluster.x-k8s.io/v1beta2.AccessEntryType">AccessEntryType
+(<code>string</code> alias)</p></h3>
+<p>
+(<em>Appears on:</em><a href="#controlplane.cluster.x-k8s.io/v1beta2.AccessEntry">AccessEntry</a>)
+</p>
+<p>
+<p>AccessEntryType represents the different types of access entries that can be used in an Amazon EKS cluster</p>
+</p>
+<h3 id="controlplane.cluster.x-k8s.io/v1beta2.AccessPolicyReference">AccessPolicyReference
+</h3>
+<p>
+(<em>Appears on:</em><a href="#controlplane.cluster.x-k8s.io/v1beta2.AccessEntry">AccessEntry</a>)
+</p>
+<p>
+<p>AccessPolicyReference represents a reference to an AWS EKS access policy</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>policyARN</code><br/>
+<em>
+string
+</em>
+</td>
+<td>
+<p>PolicyARN is the Amazon Resource Name (ARN) of the access policy</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>accessScope</code><br/>
+<em>
+<a href="#controlplane.cluster.x-k8s.io/v1beta2.AccessScope">
+AccessScope
+</a>
+</em>
+</td>
+<td>
+<p>AccessScope specifies the scope for the policy</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="controlplane.cluster.x-k8s.io/v1beta2.AccessScope">AccessScope
+</h3>
+<p>
+(<em>Appears on:</em><a href="#controlplane.cluster.x-k8s.io/v1beta2.AccessPolicyReference">AccessPolicyReference</a>)
+</p>
+<p>
+<p>AccessScope represents the scope for an access policy</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>type</code><br/>
+<em>
+<a href="#controlplane.cluster.x-k8s.io/v1beta2.AccessScopeType">
+AccessScopeType
+</a>
+</em>
+</td>
+<td>
+<p>Type is the type of access scope. Defaults to &ldquo;cluster&rdquo;.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>namespaces</code><br/>
+<em>
+[]string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Namespaces are the namespaces for the access scope
+Only valid when Type is namespace</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="controlplane.cluster.x-k8s.io/v1beta2.AccessScopeType">AccessScopeType
+(<code>string</code> alias)</p></h3>
+<p>
+(<em>Appears on:</em><a href="#controlplane.cluster.x-k8s.io/v1beta2.AccessScope">AccessScope</a>)
+</p>
+<p>
+<p>AccessScopeType defines the scope type for an access policy</p>
+</p>
 <h3 id="controlplane.cluster.x-k8s.io/v1beta2.Addon">Addon
 </h3>
 <p>
@@ -10321,9 +10529,7 @@ If no identity is specified, the default identity for this controller will be us
 <td>
 <code>controlPlaneEndpoint</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.APIEndpoint
-</a>
+Cluster API api/core/v1beta1.APIEndpoint
 </em>
 </td>
 <td>
@@ -10945,9 +11151,7 @@ If no identity is specified, the default identity for this controller will be us
 <td>
 <code>controlPlaneEndpoint</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.APIEndpoint
-</a>
+Cluster API api/core/v1beta1.APIEndpoint
 </em>
 </td>
 <td>
@@ -11074,9 +11278,7 @@ the controller, and that manual intervention is required.</p>
 <td>
 <code>conditions</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.Conditions
-</a>
+Cluster API api/core/v1beta1.Conditions
 </em>
 </td>
 <td>
@@ -11648,9 +11850,7 @@ string
 <td>
 <code>controlPlaneEndpoint</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.APIEndpoint
-</a>
+Cluster API api/core/v1beta1.APIEndpoint
 </em>
 </td>
 <td>
@@ -12180,9 +12380,7 @@ string
 <td>
 <code>controlPlaneEndpoint</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.APIEndpoint
-</a>
+Cluster API api/core/v1beta1.APIEndpoint
 </em>
 </td>
 <td>
@@ -12484,9 +12682,7 @@ NetworkStatus
 <td>
 <code>failureDomains</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.FailureDomains
-</a>
+Cluster API api/core/v1beta1.FailureDomains
 </em>
 </td>
 <td>
@@ -12508,9 +12704,7 @@ Instance
 <td>
 <code>conditions</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.Conditions
-</a>
+Cluster API api/core/v1beta1.Conditions
 </em>
 </td>
 <td>
@@ -12595,9 +12789,7 @@ AWSClusterTemplateResource
 <td>
 <code>metadata</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.ObjectMeta
-</a>
+Cluster API api/core/v1beta1.ObjectMeta
 </em>
 </td>
 <td>
@@ -12661,9 +12853,7 @@ string
 <td>
 <code>controlPlaneEndpoint</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.APIEndpoint
-</a>
+Cluster API api/core/v1beta1.APIEndpoint
 </em>
 </td>
 <td>
@@ -13714,9 +13904,7 @@ This will be set to true when SpotMarketOptions is not nil (i.e. this machine is
 <td>
 <code>addresses</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-[]Cluster API api/v1beta1.MachineAddress
-</a>
+[]Cluster API api/core/v1beta1.MachineAddress
 </em>
 </td>
 <td>
@@ -13791,9 +13979,7 @@ controller&rsquo;s output.</p>
 <td>
 <code>conditions</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.Conditions
-</a>
+Cluster API api/core/v1beta1.Conditions
 </em>
 </td>
 <td>
@@ -13892,9 +14078,7 @@ AWSMachineTemplateStatus
 <td>
 <code>metadata</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.ObjectMeta
-</a>
+Cluster API api/core/v1beta1.ObjectMeta
 </em>
 </td>
 <td>
@@ -14329,8 +14513,8 @@ string
 </td>
 <td>
 <em>(Optional)</em>
-<p>ARN of resource.
-Deprecated: This field has no function and is going to be removed in the next release.</p>
+<p>ARN of resource.</p>
+<p>Deprecated: This field has no function and is going to be removed in the next release.</p>
 </td>
 </tr>
 <tr>
@@ -15511,9 +15695,7 @@ string
 <td>
 <code>addresses</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-[]Cluster API api/v1beta1.MachineAddress
-</a>
+[]Cluster API api/core/v1beta1.MachineAddress
 </em>
 </td>
 <td>
@@ -17156,9 +17338,7 @@ int32
 <td>
 <code>conditions</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.Conditions
-</a>
+Cluster API api/core/v1beta1.Conditions
 </em>
 </td>
 <td>
@@ -17956,9 +18136,7 @@ controller&rsquo;s output.</p>
 <td>
 <code>conditions</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.Conditions
-</a>
+Cluster API api/core/v1beta1.Conditions
 </em>
 </td>
 <td>
@@ -18400,9 +18578,7 @@ object and/or logged in the controller&rsquo;s output.</p>
 <td>
 <code>conditions</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.Conditions
-</a>
+Cluster API api/core/v1beta1.Conditions
 </em>
 </td>
 <td>
@@ -19066,9 +19242,7 @@ string
 <td>
 <code>controlPlaneEndpoint</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.APIEndpoint
-</a>
+Cluster API api/core/v1beta1.APIEndpoint
 </em>
 </td>
 <td>
@@ -19626,9 +19800,7 @@ string
 <td>
 <code>controlPlaneEndpoint</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.APIEndpoint
-</a>
+Cluster API api/core/v1beta1.APIEndpoint
 </em>
 </td>
 <td>
@@ -19946,9 +20118,7 @@ NetworkStatus
 <td>
 <code>failureDomains</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.FailureDomains
-</a>
+Cluster API api/core/v1beta1.FailureDomains
 </em>
 </td>
 <td>
@@ -19970,9 +20140,7 @@ Instance
 <td>
 <code>conditions</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.Conditions
-</a>
+Cluster API api/core/v1beta1.Conditions
 </em>
 </td>
 <td>
@@ -20057,9 +20225,7 @@ AWSClusterTemplateResource
 <td>
 <code>metadata</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.ObjectMeta
-</a>
+Cluster API api/core/v1beta1.ObjectMeta
 </em>
 </td>
 <td>
@@ -20135,9 +20301,7 @@ string
 <td>
 <code>controlPlaneEndpoint</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.APIEndpoint
-</a>
+Cluster API api/core/v1beta1.APIEndpoint
 </em>
 </td>
 <td>
@@ -20914,6 +21078,25 @@ If not specified, AWS applies a default value.</p>
 </tr>
 <tr>
 <td>
+<code>assignPrimaryIPv6</code><br/>
+<em>
+<a href="#infrastructure.cluster.x-k8s.io/v1beta2.PrimaryIPv6AssignmentState">
+PrimaryIPv6AssignmentState
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>AssignPrimaryIPv6 specifies whether to enable assigning a primary IPv6 address to the primary network Interface.
+When set to enabled, the instance will be assigned a primary IPv6 address from the subnet&rsquo;s IPv6 CIDR block.
+This is required when registering instances by ID to IPv6 target groups of dual-stack load balancers.</p>
+<p>When not specified, the default value varies based on the subnet that the instance is launched in:
+- disabled if subnet is ipv4 only
+- enabled if subnet is ipv6 only or dual-stack</p>
+</td>
+</tr>
+<tr>
+<td>
 <code>uncompressedUserData</code><br/>
 <em>
 bool
@@ -21004,7 +21187,11 @@ string
 </td>
 <td>
 <em>(Optional)</em>
-<p>Tenancy indicates if instance should run on shared or single-tenant hardware.</p>
+<p>Tenancy indicates if instance should run on shared or single-tenant hardware.
+When Tenancy=host, AWS will attempt to find a suitable host from:
+- Preexisting allocated hosts that have auto-placement enabled
+- A specific host ID, if configured
+- Allocating a new dedicated host if DynamicHostAllocation is configured</p>
 </td>
 </tr>
 <tr>
@@ -21061,7 +21248,8 @@ string
 </td>
 <td>
 <em>(Optional)</em>
-<p>HostID specifies the Dedicated Host on which the instance must be started.</p>
+<p>HostID specifies the Dedicated Host on which the instance must be started.
+This field is mutually exclusive with DynamicHostAllocation.</p>
 </td>
 </tr>
 <tr>
@@ -21074,9 +21262,30 @@ string
 <td>
 <em>(Optional)</em>
 <p>HostAffinity specifies the dedicated host affinity setting for the instance.
-When hostAffinity is set to host, an instance started onto a specific host always restarts on the same host if stopped.
-When hostAffinity is set to default, and you stop and restart the instance, it can be restarted on any available host.
-When HostAffinity is defined, HostID is required.</p>
+When HostAffinity is set to &ldquo;host&rdquo;, an instance started onto a specific host always restarts on the same host if stopped:
+- If HostID is set, the instance launches on the specific host and must return to that same host after any stop/start (Targeted &amp; Pinned).
+- If HostID is not set, the instance gets launched on any available and must returns to the same host after any stop/start (Auto-placed &amp; Pinned).
+When HostAffinity is set to &ldquo;default&rdquo; (the default value), the instance (when restarted) can return on any available host:
+- If HostID is set, the instance launches on the specified host now, but (when restarted) can return to any available hosts (Targeted &amp; Flexible).
+- If HostID is not set, the instance launches on any available host now, and (when restarted) can return to any available hosts (Auto-placed &amp; Flexible).
+If HostAffinity is not specified, it defaults to &ldquo;default&rdquo;.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>dynamicHostAllocation</code><br/>
+<em>
+<a href="#infrastructure.cluster.x-k8s.io/v1beta2.DynamicHostAllocationSpec">
+DynamicHostAllocationSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>DynamicHostAllocation enables automatic allocation of a single dedicated host.
+Cost effectiveness of allocating a single instance on a dedicated host may vary
+depending on the instance type and the region.
+This field is mutually exclusive with HostID and always allocates exactly one host.</p>
 </td>
 </tr>
 <tr>
@@ -21427,6 +21636,25 @@ If not specified, AWS applies a default value.</p>
 </tr>
 <tr>
 <td>
+<code>assignPrimaryIPv6</code><br/>
+<em>
+<a href="#infrastructure.cluster.x-k8s.io/v1beta2.PrimaryIPv6AssignmentState">
+PrimaryIPv6AssignmentState
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>AssignPrimaryIPv6 specifies whether to enable assigning a primary IPv6 address to the primary network Interface.
+When set to enabled, the instance will be assigned a primary IPv6 address from the subnet&rsquo;s IPv6 CIDR block.
+This is required when registering instances by ID to IPv6 target groups of dual-stack load balancers.</p>
+<p>When not specified, the default value varies based on the subnet that the instance is launched in:
+- disabled if subnet is ipv4 only
+- enabled if subnet is ipv6 only or dual-stack</p>
+</td>
+</tr>
+<tr>
+<td>
 <code>uncompressedUserData</code><br/>
 <em>
 bool
@@ -21517,7 +21745,11 @@ string
 </td>
 <td>
 <em>(Optional)</em>
-<p>Tenancy indicates if instance should run on shared or single-tenant hardware.</p>
+<p>Tenancy indicates if instance should run on shared or single-tenant hardware.
+When Tenancy=host, AWS will attempt to find a suitable host from:
+- Preexisting allocated hosts that have auto-placement enabled
+- A specific host ID, if configured
+- Allocating a new dedicated host if DynamicHostAllocation is configured</p>
 </td>
 </tr>
 <tr>
@@ -21574,7 +21806,8 @@ string
 </td>
 <td>
 <em>(Optional)</em>
-<p>HostID specifies the Dedicated Host on which the instance must be started.</p>
+<p>HostID specifies the Dedicated Host on which the instance must be started.
+This field is mutually exclusive with DynamicHostAllocation.</p>
 </td>
 </tr>
 <tr>
@@ -21587,9 +21820,30 @@ string
 <td>
 <em>(Optional)</em>
 <p>HostAffinity specifies the dedicated host affinity setting for the instance.
-When hostAffinity is set to host, an instance started onto a specific host always restarts on the same host if stopped.
-When hostAffinity is set to default, and you stop and restart the instance, it can be restarted on any available host.
-When HostAffinity is defined, HostID is required.</p>
+When HostAffinity is set to &ldquo;host&rdquo;, an instance started onto a specific host always restarts on the same host if stopped:
+- If HostID is set, the instance launches on the specific host and must return to that same host after any stop/start (Targeted &amp; Pinned).
+- If HostID is not set, the instance gets launched on any available and must returns to the same host after any stop/start (Auto-placed &amp; Pinned).
+When HostAffinity is set to &ldquo;default&rdquo; (the default value), the instance (when restarted) can return on any available host:
+- If HostID is set, the instance launches on the specified host now, but (when restarted) can return to any available hosts (Targeted &amp; Flexible).
+- If HostID is not set, the instance launches on any available host now, and (when restarted) can return to any available hosts (Auto-placed &amp; Flexible).
+If HostAffinity is not specified, it defaults to &ldquo;default&rdquo;.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>dynamicHostAllocation</code><br/>
+<em>
+<a href="#infrastructure.cluster.x-k8s.io/v1beta2.DynamicHostAllocationSpec">
+DynamicHostAllocationSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>DynamicHostAllocation enables automatic allocation of a single dedicated host.
+Cost effectiveness of allocating a single instance on a dedicated host may vary
+depending on the instance type and the region.
+This field is mutually exclusive with HostID and always allocates exactly one host.</p>
 </td>
 </tr>
 <tr>
@@ -21656,9 +21910,7 @@ This will be set to true when SpotMarketOptions is not nil (i.e. this machine is
 <td>
 <code>addresses</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-[]Cluster API api/v1beta1.MachineAddress
-</a>
+[]Cluster API api/core/v1beta1.MachineAddress
 </em>
 </td>
 <td>
@@ -21733,14 +21985,27 @@ controller&rsquo;s output.</p>
 <td>
 <code>conditions</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.Conditions
-</a>
+Cluster API api/core/v1beta1.Conditions
 </em>
 </td>
 <td>
 <em>(Optional)</em>
 <p>Conditions defines current service state of the AWSMachine.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>dedicatedHost</code><br/>
+<em>
+<a href="#infrastructure.cluster.x-k8s.io/v1beta2.DedicatedHostStatus">
+DedicatedHostStatus
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>DedicatedHost tracks the dynamically allocated dedicated host.
+This field is populated when DynamicHostAllocation is used.</p>
 </td>
 </tr>
 </tbody>
@@ -21834,9 +22099,7 @@ AWSMachineTemplateStatus
 <td>
 <code>metadata</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.ObjectMeta
-</a>
+Cluster API api/core/v1beta1.ObjectMeta
 </em>
 </td>
 <td>
@@ -22154,6 +22417,25 @@ If not specified, AWS applies a default value.</p>
 </tr>
 <tr>
 <td>
+<code>assignPrimaryIPv6</code><br/>
+<em>
+<a href="#infrastructure.cluster.x-k8s.io/v1beta2.PrimaryIPv6AssignmentState">
+PrimaryIPv6AssignmentState
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>AssignPrimaryIPv6 specifies whether to enable assigning a primary IPv6 address to the primary network Interface.
+When set to enabled, the instance will be assigned a primary IPv6 address from the subnet&rsquo;s IPv6 CIDR block.
+This is required when registering instances by ID to IPv6 target groups of dual-stack load balancers.</p>
+<p>When not specified, the default value varies based on the subnet that the instance is launched in:
+- disabled if subnet is ipv4 only
+- enabled if subnet is ipv6 only or dual-stack</p>
+</td>
+</tr>
+<tr>
+<td>
 <code>uncompressedUserData</code><br/>
 <em>
 bool
@@ -22244,7 +22526,11 @@ string
 </td>
 <td>
 <em>(Optional)</em>
-<p>Tenancy indicates if instance should run on shared or single-tenant hardware.</p>
+<p>Tenancy indicates if instance should run on shared or single-tenant hardware.
+When Tenancy=host, AWS will attempt to find a suitable host from:
+- Preexisting allocated hosts that have auto-placement enabled
+- A specific host ID, if configured
+- Allocating a new dedicated host if DynamicHostAllocation is configured</p>
 </td>
 </tr>
 <tr>
@@ -22301,7 +22587,8 @@ string
 </td>
 <td>
 <em>(Optional)</em>
-<p>HostID specifies the Dedicated Host on which the instance must be started.</p>
+<p>HostID specifies the Dedicated Host on which the instance must be started.
+This field is mutually exclusive with DynamicHostAllocation.</p>
 </td>
 </tr>
 <tr>
@@ -22314,9 +22601,30 @@ string
 <td>
 <em>(Optional)</em>
 <p>HostAffinity specifies the dedicated host affinity setting for the instance.
-When hostAffinity is set to host, an instance started onto a specific host always restarts on the same host if stopped.
-When hostAffinity is set to default, and you stop and restart the instance, it can be restarted on any available host.
-When HostAffinity is defined, HostID is required.</p>
+When HostAffinity is set to &ldquo;host&rdquo;, an instance started onto a specific host always restarts on the same host if stopped:
+- If HostID is set, the instance launches on the specific host and must return to that same host after any stop/start (Targeted &amp; Pinned).
+- If HostID is not set, the instance gets launched on any available and must returns to the same host after any stop/start (Auto-placed &amp; Pinned).
+When HostAffinity is set to &ldquo;default&rdquo; (the default value), the instance (when restarted) can return on any available host:
+- If HostID is set, the instance launches on the specified host now, but (when restarted) can return to any available hosts (Targeted &amp; Flexible).
+- If HostID is not set, the instance launches on any available host now, and (when restarted) can return to any available hosts (Auto-placed &amp; Flexible).
+If HostAffinity is not specified, it defaults to &ldquo;default&rdquo;.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>dynamicHostAllocation</code><br/>
+<em>
+<a href="#infrastructure.cluster.x-k8s.io/v1beta2.DynamicHostAllocationSpec">
+DynamicHostAllocationSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>DynamicHostAllocation enables automatic allocation of a single dedicated host.
+Cost effectiveness of allocating a single instance on a dedicated host may vary
+depending on the instance type and the region.
+This field is mutually exclusive with HostID and always allocates exactly one host.</p>
 </td>
 </tr>
 <tr>
@@ -22403,6 +22711,34 @@ This value is used for autoscaling from zero operations as defined in:
 <a href="https://github.com/kubernetes-sigs/cluster-api/blob/main/docs/proposals/20210310-opt-in-autoscaling-from-zero.md">https://github.com/kubernetes-sigs/cluster-api/blob/main/docs/proposals/20210310-opt-in-autoscaling-from-zero.md</a></p>
 </td>
 </tr>
+<tr>
+<td>
+<code>nodeInfo</code><br/>
+<em>
+<a href="#infrastructure.cluster.x-k8s.io/v1beta2.NodeInfo">
+NodeInfo
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>NodeInfo contains information about the node&rsquo;s architecture and operating system.
+This value is used for autoscaling from zero operations as defined in:
+<a href="https://github.com/kubernetes-sigs/cluster-api/blob/main/docs/proposals/20210310-opt-in-autoscaling-from-zero.md">https://github.com/kubernetes-sigs/cluster-api/blob/main/docs/proposals/20210310-opt-in-autoscaling-from-zero.md</a></p>
+</td>
+</tr>
+<tr>
+<td>
+<code>conditions</code><br/>
+<em>
+Cluster API api/core/v1beta1.Conditions
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Conditions defines current service state of the AWSMachineTemplate.</p>
+</td>
+</tr>
 </tbody>
 </table>
 <h3 id="infrastructure.cluster.x-k8s.io/v1beta2.AWSMachineTemplateWebhook">AWSMachineTemplateWebhook
@@ -22455,9 +22791,7 @@ AWSManagedClusterSpec
 <td>
 <code>controlPlaneEndpoint</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.APIEndpoint
-</a>
+Cluster API api/core/v1beta1.APIEndpoint
 </em>
 </td>
 <td>
@@ -22502,9 +22836,7 @@ AWSManagedClusterStatus
 <td>
 <code>controlPlaneEndpoint</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.APIEndpoint
-</a>
+Cluster API api/core/v1beta1.APIEndpoint
 </em>
 </td>
 <td>
@@ -22546,9 +22878,7 @@ bool
 <td>
 <code>failureDomains</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.FailureDomains
-</a>
+Cluster API api/core/v1beta1.FailureDomains
 </em>
 </td>
 <td>
@@ -22560,9 +22890,7 @@ Cluster API api/v1beta1.FailureDomains
 <td>
 <code>conditions</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.Conditions
-</a>
+Cluster API api/core/v1beta1.Conditions
 </em>
 </td>
 <td>
@@ -22662,9 +22990,7 @@ AWSManagedClusterSpec
 <td>
 <code>controlPlaneEndpoint</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.APIEndpoint
-</a>
+Cluster API api/core/v1beta1.APIEndpoint
 </em>
 </td>
 <td>
@@ -22961,6 +23287,15 @@ AWSClusterIdentity from any namespace.</p>
 </tr>
 </tbody>
 </table>
+<h3 id="infrastructure.cluster.x-k8s.io/v1beta2.Architecture">Architecture
+(<code>string</code> alias)</p></h3>
+<p>
+(<em>Appears on:</em><a href="#infrastructure.cluster.x-k8s.io/v1beta2.NodeInfo">NodeInfo</a>)
+</p>
+<p>
+<p>Architecture represents the CPU architecture of the node.
+Its underlying type is a string and its value can be any of amd64, arm64.</p>
+</p>
 <h3 id="infrastructure.cluster.x-k8s.io/v1beta2.Bastion">Bastion
 </h3>
 <p>
@@ -23541,6 +23876,172 @@ SecretBackend
 <p>SecureSecretsBackend, when set to parameter-store will utilize the AWS Systems Manager
 Parameter Storage to distribute secrets. By default or with the value of secrets-manager,
 will use AWS Secrets Manager instead.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="infrastructure.cluster.x-k8s.io/v1beta2.DedicatedHostInfo">DedicatedHostInfo
+</h3>
+<p>
+<p>DedicatedHostInfo contains information about a dedicated host.</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>hostID</code><br/>
+<em>
+string
+</em>
+</td>
+<td>
+<p>HostID is the ID of the dedicated host.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>instanceFamily</code><br/>
+<em>
+string
+</em>
+</td>
+<td>
+<p>InstanceFamily is the instance family supported by the host.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>instanceType</code><br/>
+<em>
+string
+</em>
+</td>
+<td>
+<p>InstanceType is the instance type supported by the host.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>availabilityZone</code><br/>
+<em>
+string
+</em>
+</td>
+<td>
+<p>AvailabilityZone is the AZ where the host is located.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>state</code><br/>
+<em>
+string
+</em>
+</td>
+<td>
+<p>State is the current state of the dedicated host.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>totalCapacity</code><br/>
+<em>
+int32
+</em>
+</td>
+<td>
+<p>TotalCapacity is the total number of instances that can be launched on the host.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>availableCapacity</code><br/>
+<em>
+int32
+</em>
+</td>
+<td>
+<p>AvailableCapacity is the number of instances that can still be launched on the host.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>tags</code><br/>
+<em>
+map[string]string
+</em>
+</td>
+<td>
+<p>Tags associated with the dedicated host.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="infrastructure.cluster.x-k8s.io/v1beta2.DedicatedHostStatus">DedicatedHostStatus
+</h3>
+<p>
+(<em>Appears on:</em><a href="#infrastructure.cluster.x-k8s.io/v1beta2.AWSMachineStatus">AWSMachineStatus</a>)
+</p>
+<p>
+<p>DedicatedHostStatus defines the observed state of a dynamically allocated dedicated host
+associated with an AWSMachine. This struct is used to track the ID of the dedicated host.</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>id</code><br/>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>ID tracks the dynamically allocated dedicated host ID.
+This field is populated when DynamicHostAllocation is used.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="infrastructure.cluster.x-k8s.io/v1beta2.DynamicHostAllocationSpec">DynamicHostAllocationSpec
+</h3>
+<p>
+(<em>Appears on:</em><a href="#infrastructure.cluster.x-k8s.io/v1beta2.AWSMachineSpec">AWSMachineSpec</a>, <a href="#infrastructure.cluster.x-k8s.io/v1beta2.Instance">Instance</a>)
+</p>
+<p>
+<p>DynamicHostAllocationSpec defines the configuration for dynamic dedicated host allocation.
+This specification always allocates exactly one dedicated host per machine.</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>tags</code><br/>
+<em>
+map[string]string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Tags to apply to the allocated dedicated host.</p>
 </td>
 </tr>
 </tbody>
@@ -24270,9 +24771,7 @@ string
 <td>
 <code>addresses</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-[]Cluster API api/v1beta1.MachineAddress
-</a>
+[]Cluster API api/core/v1beta1.MachineAddress
 </em>
 </td>
 <td>
@@ -24384,6 +24883,19 @@ NetworkInterfaceType
 </td>
 <td>
 <p>NetworkInterfaceType is the interface type of the primary network Interface.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>assignPrimaryIPv6</code><br/>
+<em>
+<a href="#infrastructure.cluster.x-k8s.io/v1beta2.PrimaryIPv6AssignmentState">
+PrimaryIPv6AssignmentState
+</a>
+</em>
+</td>
+<td>
+<p>AssignPrimaryIPv6 specifies whether to enable assigning a primary IPv6 address to the primary network Interface.</p>
 </td>
 </tr>
 <tr>
@@ -24552,9 +25064,12 @@ string
 <td>
 <em>(Optional)</em>
 <p>HostAffinity specifies the dedicated host affinity setting for the instance.
-When hostAffinity is set to host, an instance started onto a specific host always restarts on the same host if stopped.
-When hostAffinity is set to default, and you stop and restart the instance, it can be restarted on any available host.
-When HostAffinity is defined, HostID is required.</p>
+When HostAffinity is set to &ldquo;host&rdquo;, an instance started onto a specific host always restarts on the same host if stopped:
+- If HostID is set, the instance launches on the specific host and must return to that same host after any stop/start (Targeted &amp; Pinned).
+- If HostID is not set, the instance gets launched on any available and must returns to the same host after any stop/start (Auto-placed &amp; Pinned).
+When HostAffinity is set to &ldquo;default&rdquo; (the default value), the instance (when restarted) can return on any available host:
+- If HostID is set, the instance launches on the specified host now, but (when restarted) can return to any available hosts (Targeted &amp; Flexible).
+- If HostID is not set, the instance launches on any available host now, and (when restarted) can return to any available hosts (Auto-placed &amp; Flexible).</p>
 </td>
 </tr>
 <tr>
@@ -24567,6 +25082,21 @@ string
 <td>
 <em>(Optional)</em>
 <p>HostID specifies the dedicated host on which the instance should be started.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>dynamicHostAllocation</code><br/>
+<em>
+<a href="#infrastructure.cluster.x-k8s.io/v1beta2.DynamicHostAllocationSpec">
+DynamicHostAllocationSpec
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>DynamicHostAllocation enables automatic allocation of dedicated hosts.
+This field is mutually exclusive with HostID.</p>
 </td>
 </tr>
 <tr>
@@ -25193,6 +25723,71 @@ LoadBalancer
 </tr>
 </tbody>
 </table>
+<h3 id="infrastructure.cluster.x-k8s.io/v1beta2.NodeInfo">NodeInfo
+</h3>
+<p>
+(<em>Appears on:</em><a href="#infrastructure.cluster.x-k8s.io/v1beta2.AWSMachineTemplateStatus">AWSMachineTemplateStatus</a>)
+</p>
+<p>
+<p>NodeInfo contains information about the node&rsquo;s architecture and operating system.</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>architecture</code><br/>
+<em>
+<a href="#infrastructure.cluster.x-k8s.io/v1beta2.Architecture">
+Architecture
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Architecture is the CPU architecture of the node.
+Its underlying type is a string and its value can be any of amd64, arm64.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>operatingSystem</code><br/>
+<em>
+<a href="#infrastructure.cluster.x-k8s.io/v1beta2.OperatingSystem">
+OperatingSystem
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>OperatingSystem is the operating system of the node.
+Its underlying type is a string and its value can be any of linux, windows.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="infrastructure.cluster.x-k8s.io/v1beta2.OperatingSystem">OperatingSystem
+(<code>string</code> alias)</p></h3>
+<p>
+(<em>Appears on:</em><a href="#infrastructure.cluster.x-k8s.io/v1beta2.NodeInfo">NodeInfo</a>)
+</p>
+<p>
+<p>OperatingSystem represents the operating system of the node.
+Its underlying type is a string and its value can be any of linux, windows.</p>
+</p>
+<h3 id="infrastructure.cluster.x-k8s.io/v1beta2.PrimaryIPv6AssignmentState">PrimaryIPv6AssignmentState
+(<code>string</code> alias)</p></h3>
+<p>
+(<em>Appears on:</em><a href="#infrastructure.cluster.x-k8s.io/v1beta2.AWSMachineSpec">AWSMachineSpec</a>, <a href="#infrastructure.cluster.x-k8s.io/v1beta2.Instance">Instance</a>)
+</p>
+<p>
+<p>PrimaryIPv6AssignmentState describes whether to assign a primary IPv6 address to the primary network interface.</p>
+</p>
 <h3 id="infrastructure.cluster.x-k8s.io/v1beta2.PrivateDNSName">PrivateDNSName
 </h3>
 <p>
@@ -27626,9 +28221,7 @@ int32
 <td>
 <code>conditions</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.Conditions
-</a>
+Cluster API api/core/v1beta1.Conditions
 </em>
 </td>
 <td>
@@ -28105,6 +28698,20 @@ are prohibited (<a href="https://docs.aws.amazon.com/eks/latest/userguide/launch
 <p>AWSLifecycleHooks specifies lifecycle hooks for the managed node group.</p>
 </td>
 </tr>
+<tr>
+<td>
+<code>nodeRepairConfig</code><br/>
+<em>
+<a href="#infrastructure.cluster.x-k8s.io/v1beta2.NodeRepairConfig">
+NodeRepairConfig
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>NodeRepairConfig specifies the node auto repair configuration for the managed node group.</p>
+</td>
+</tr>
 </table>
 </td>
 </tr>
@@ -28449,6 +29056,20 @@ are prohibited (<a href="https://docs.aws.amazon.com/eks/latest/userguide/launch
 <p>AWSLifecycleHooks specifies lifecycle hooks for the managed node group.</p>
 </td>
 </tr>
+<tr>
+<td>
+<code>nodeRepairConfig</code><br/>
+<em>
+<a href="#infrastructure.cluster.x-k8s.io/v1beta2.NodeRepairConfig">
+NodeRepairConfig
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>NodeRepairConfig specifies the node auto repair configuration for the managed node group.</p>
+</td>
+</tr>
 </tbody>
 </table>
 <h3 id="infrastructure.cluster.x-k8s.io/v1beta2.AWSManagedMachinePoolStatus">AWSManagedMachinePoolStatus
@@ -28569,9 +29190,7 @@ controller&rsquo;s output.</p>
 <td>
 <code>conditions</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.Conditions
-</a>
+Cluster API api/core/v1beta1.Conditions
 </em>
 </td>
 <td>
@@ -29302,9 +29921,7 @@ object and/or logged in the controller&rsquo;s output.</p>
 <td>
 <code>conditions</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.Conditions
-</a>
+Cluster API api/core/v1beta1.Conditions
 </em>
 </td>
 <td>
@@ -29693,6 +30310,37 @@ InstancesDistribution
 </tr>
 </tbody>
 </table>
+<h3 id="infrastructure.cluster.x-k8s.io/v1beta2.NodeRepairConfig">NodeRepairConfig
+</h3>
+<p>
+(<em>Appears on:</em><a href="#infrastructure.cluster.x-k8s.io/v1beta2.AWSManagedMachinePoolSpec">AWSManagedMachinePoolSpec</a>)
+</p>
+<p>
+<p>NodeRepairConfig defines the node auto repair configuration for managed node groups.</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>enabled</code><br/>
+<em>
+bool
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Enabled specifies whether node auto repair is enabled for the node group.
+When enabled, EKS will automatically repair unhealthy nodes by replacing them.</p>
+</td>
+</tr>
+</tbody>
+</table>
 <h3 id="infrastructure.cluster.x-k8s.io/v1beta2.OidcProviderType">OidcProviderType
 (<code>string</code> alias)</p></h3>
 <p>
@@ -29973,9 +30621,7 @@ ROSAClusterSpec
 <td>
 <code>controlPlaneEndpoint</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.APIEndpoint
-</a>
+Cluster API api/core/v1beta1.APIEndpoint
 </em>
 </td>
 <td>
@@ -30020,9 +30666,7 @@ ROSAClusterStatus
 <td>
 <code>controlPlaneEndpoint</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.APIEndpoint
-</a>
+Cluster API api/core/v1beta1.APIEndpoint
 </em>
 </td>
 <td>
@@ -30064,9 +30708,7 @@ bool
 <td>
 <code>failureDomains</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.FailureDomains
-</a>
+Cluster API api/core/v1beta1.FailureDomains
 </em>
 </td>
 <td>
@@ -30078,9 +30720,7 @@ Cluster API api/v1beta1.FailureDomains
 <td>
 <code>conditions</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.Conditions
-</a>
+Cluster API api/core/v1beta1.Conditions
 </em>
 </td>
 <td>
@@ -30442,7 +31082,8 @@ int
 <td>
 <em>(Optional)</em>
 <p>The number of availability zones to be used for creation of the network infrastructure.
-You can specify anything between one and four, depending on the chosen AWS region.</p>
+You can specify anything between one and four, depending on the chosen AWS region.
+Either AvailabilityZoneCount OR AvailabilityZones must be set.</p>
 </td>
 </tr>
 <tr>
@@ -30456,7 +31097,7 @@ You can specify anything between one and four, depending on the chosen AWS regio
 <em>(Optional)</em>
 <p>The list of availability zones to be used for creation of the network infrastructure.
 You can specify anything between one and four valid availability zones from a given region.
-Should you specify both the availabilityZoneCount and availabilityZones, the list of availability zones takes preference.</p>
+Either AvailabilityZones OR AvailabilityZoneCount must be set.</p>
 </td>
 </tr>
 <tr>
@@ -30565,7 +31206,8 @@ int
 <td>
 <em>(Optional)</em>
 <p>The number of availability zones to be used for creation of the network infrastructure.
-You can specify anything between one and four, depending on the chosen AWS region.</p>
+You can specify anything between one and four, depending on the chosen AWS region.
+Either AvailabilityZoneCount OR AvailabilityZones must be set.</p>
 </td>
 </tr>
 <tr>
@@ -30579,7 +31221,7 @@ You can specify anything between one and four, depending on the chosen AWS regio
 <em>(Optional)</em>
 <p>The list of availability zones to be used for creation of the network infrastructure.
 You can specify anything between one and four valid availability zones from a given region.
-Should you specify both the availabilityZoneCount and availabilityZones, the list of availability zones takes preference.</p>
+Either AvailabilityZones OR AvailabilityZoneCount must be set.</p>
 </td>
 </tr>
 <tr>
@@ -30671,9 +31313,7 @@ The stack tags will then be automatically applied to the supported AWS resources
 <td>
 <code>conditions</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.Conditions
-</a>
+Cluster API api/core/v1beta1.Conditions
 </em>
 </td>
 <td>
@@ -31012,9 +31652,7 @@ AWSRolesRef
 <td>
 <code>conditions</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.Conditions
-</a>
+Cluster API api/core/v1beta1.Conditions
 </em>
 </td>
 <td>
@@ -31457,9 +32095,7 @@ int32
 <td>
 <code>conditions</code><br/>
 <em>
-<a href="https://doc.crds.dev/github.com/kubernetes-sigs/cluster-api@v1.0.0">
-Cluster API api/v1beta1.Conditions
-</a>
+Cluster API api/core/v1beta1.Conditions
 </em>
 </td>
 <td>

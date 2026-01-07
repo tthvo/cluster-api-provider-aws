@@ -1,3 +1,4 @@
+# The template creates a dualstack cluster with IPv6 as primary
 apiVersion: cluster.x-k8s.io/v1beta1
 kind: Cluster
 metadata:
@@ -55,20 +56,38 @@ spec:
     clusterConfiguration:
       apiServer:
         extraArgs:
+          bind-address: "::"
           cloud-provider: external
       controllerManager:
         extraArgs:
+          bind-address: "::"
           cloud-provider: external
+      scheduler:
+        extraArgs:
+          bind-address: "::"
     initConfiguration:
       nodeRegistration:
         kubeletExtraArgs:
           cloud-provider: external
-        name: '{{ ds.meta_data.local_hostname }}'
+          # node-ip: pass "::" to make kubelet prefer the default IPv6 address
+          # rather than the default IPv4 address.
+          node-ip: "::"
+        name: "{{ ds.meta_data.local_hostname }}"
+      localAPIEndpoint:
+        advertiseAddress: "::"
+        bindPort: 6443
     joinConfiguration:
       nodeRegistration:
         kubeletExtraArgs:
           cloud-provider: external
-        name: '{{ ds.meta_data.local_hostname }}'
+          # node-ip: pass "::" to make kubelet prefer the default IPv6 address
+          # rather than the default IPv4 address.
+          node-ip: "::"
+        name: "{{ ds.meta_data.local_hostname }}"
+      controlPlane:
+        localAPIEndpoint:
+          advertiseAddress: "::"
+          bindPort: 6443
   machineTemplate:
     infrastructureRef:
       apiVersion: infrastructure.cluster.x-k8s.io/v1beta2
@@ -141,10 +160,23 @@ metadata:
 spec:
   template:
     spec:
+      clusterConfiguration:
+        apiServer:
+          extraArgs:
+            bind-address: '::'
+        controllerManager:
+          extraArgs:
+            bind-address: '::'
+        scheduler:
+          extraArgs:
+            bind-address: '::'
       joinConfiguration:
         nodeRegistration:
           kubeletExtraArgs:
             cloud-provider: external
+            # node-ip: pass "::" to make kubelet prefer the default IPv6 address
+            # rather than the default IPv4 address.
+            node-ip: "::"
           name: '{{ ds.meta_data.local_hostname }}'
 ---
 apiVersion: addons.cluster.x-k8s.io/v1beta1
